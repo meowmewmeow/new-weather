@@ -3,7 +3,7 @@ body {
   max-width: 800px;
   display: block;
   margin: 0 auto;
-  background-image: url("images/giphy.gif");
+  background-image: url("giphy.gif");
   background-color: rgb(175, 149, 185);
 
   background-repeat: no-repeat;
@@ -62,7 +62,7 @@ input[type="checkbox"] {
 
 input:checked + .ball {
   background-color: #0f010988;
-  background-image: url("images/night.gif");
+  background-image: url("night.gif");
   box-shadow: 0 0 0 2065px #36034eb2;
 }
 
