@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      label.toggle {
+        position: relative;
+        display: inline-block;
+        width: 80px;
+        height: 34px;
+        margin-left: 1100px;
+      }
+
+      input[type="checkbox"] {
+        width: 0;
+        height: 0;
+        opacity: 0;
+      }
+      .imageSun {
+        padding-bottom: 0%;
+        margin-left: 1100px;
+      }
+
+      .ball {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgb(219, 223, 13);
+        transition: 0.3s;
+        border-radius: 25px;
+      }
+
+      .ball::before {
+        position: absolute;
+        content: "";
+        height: 26px;
+        width: 26px;
+        left: 5px;
+        bottom: 4px;
+        background-color: rgb(255, 255, 255);
+        transition: 0.3s;
+        border-radius: 25px;
+      }
+
+      input:checked + .ball {
+        background-color: #0f010988;
+        background-image: url("night.gif");
+        box-shadow: 0 0 0 1500px #0f034eaf;
+      }
+
+      input:checked + .ball:before {
+        transform: translateX(44px);
+      }
+    </style>
+  </head>
+  <body>
+    <img
+      class="imageSun"
+      src="daynight.gif"
+      alt=""
+      width="80px"
+      height="80px"
+    />
+
+    <label class="toggle">
+      <input type="checkbox" />
+      <span class="ball"></span>
+    </label>
+
+    <script>
+      function searchCity(city) {
+        let apiKey = "84e6c4931d6059fa123cd32aecf7e033";
+        let units = "metric";
+        let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
+        axios.get(apiUrl).then(displayCurrentWeather);
+      }
+
+      function submitResult(event) {
+        event.preventDefault();
+        let city = document.querySelector(".cityName").value;
+        searchCity(city);
+      }
+      function searchLocation(position) {
+        let apiKey = "84e6c4931d6059fa123cd32aecf7e033";
+        let latitude = position.coords.latitude;
+        let longitude = position.coords.longitude;
+        let units = "metric";
+        let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=${units}`;
+        axios.get(apiUrl).then(displayCurrentWeather);
+      }
+      let dateElement = document.querySelector("#time");
+      let currentTime = new Date();
+      dateElement.innerHTML = formatDate(currentTime);
+
+      let cityElement = document.querySelector(".cityName");
+      let searchForm = document.querySelector("#searchInput");
+      searchForm.addEventListener("submit", submitResult);
+    </script>
+  </body>
+</html>
