@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <title>Weather Cat</title>
+  </head>
+  <body>
+    <img
+      class="imageSun"
+      src="images/mooncat.gif"
+      alt=""
+      width="80px"
+      height="80px"
+    />
+
+    <label class="toggle">
+      <input type="checkbox" />
+      <span class="ball"></span>
+    </label>
+
+    <form class="search-location">
+      <input type="text" id="searchInput" placeholder="Type location..." />
+      <label for="Search"></label>
+      <input type="submit" value="Search" />
+    </form>
+
+    <span class="cityName"><h1>Warsaw</h1> </span>
+    <div class="container">
+      <h2>Sunday</h2>
+      <h3 id="time">11:00</h3>
+    </div>
+
+    <div class="todays-weather">
+      <h3>🌥</h3>
+      <h3 id="temperature">-13°/-5°</h3>
+    </div>
+
+    <div class="card-deck">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Mon</h5>
+          <p class="card-text">🌥</p>
+          <p class="card-text">-2°/0°</p>
+          <p class="card-text">
+            <small class="text-muted">Last updated 3 mins ago</small>
+          </p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Tue</h5>
+          <p class="card-text">🌨</p>
+          <p class="card-text">-3/-3</p>
+          <p class="card-text">
+            <small class="text-muted">Last updated 3 mins ago</small>
+          </p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Wed</h5>
+          <p class="card-text">🌨</p>
+          <p class="card-text">2°/-1°</p>
+          <p class="card-text">
+            <small class="text-muted">Last updated 3 mins ago</small>
+          </p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Thu</h5>
+          <p class="card-text">🌥</p>
+          <p class="card-text">-2°/1°</p>
+          <p class="card-text">
+            <small class="text-muted">Last updated 3 mins ago</small>
+          </p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Fri</h5>
+          <p class="card-text">🌥</p>
+          <p class="card-text">0°/1°</p>
+          <p class="card-text">
+            <small class="text-muted">Last updated 3 mins ago</small>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="colorful">
+      <img
+        src="images/colorful.gif"
+        alt=""
+        width="130"
+        height="130"
+        style="float: right"
+      />
+    </div>
+    <script src="java.js"></script>
+  </body>
+</html>
